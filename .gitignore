@@ -58,3 +58,4 @@ typings/
 .env
 
 Server/sessions
+.DS_Store
