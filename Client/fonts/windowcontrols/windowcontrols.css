@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'windowcontrols';
+    src: url('windowcontrols.eot');
+    src: url('windowcontrols.eot?#iefix') format('embedded-opentype'),
+    url('windowcontrols.woff') format('woff'),
+    url('windowcontrols.ttf') format('truetype'),
+    url('windowcontrols.svg#iconfont') format('svg');
+  }

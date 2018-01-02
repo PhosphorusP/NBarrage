@@ -1,0 +1,41 @@
+<html>
+
+<head>
+    <title>NBarrage | 登录</title>
+    <style>
+        @import url(./styles/login.css);
+        @import url(./fonts/windowcontrols/windowcontrols.css);
+    </style>
+    <script>
+        var ipcRenderer=require('electron').ipcRenderer;
+        function windowMinimize() {
+            ipcRenderer.send('windowMinimize');
+        }
+        window.onload=function() {
+            document.getElementById('windowclose').setAttribute('onmousedown','window.close()');
+            document.getElementById('windowhide').setAttribute('onclick',"windowMinimize()");
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+<div class="topbar">
+<div class="windowtitle">NBarrage | 登录</div>
+<div class="windowcontrol" id="windowclose">&#xe685;</div>
+<div class="windowcontrol" id="windowhide">&#xe68d;</div>
+</div>
+<div class="title">NBarrage</div>
+<form action="http://localhost:3000/serverLogin" method="post" class="panel">
+    <input type="text" name="ip" class="input" placeholder="服务器地址" />    
+    <select name="type" class="input">
+            <option value="Server">维护</option>
+            <option value="Administrator">审核</option>
+            <option value="Screen">展示</option>
+        </select>
+        <input type="password" name="password" class="input" placeholder="密码" />
+    <input class="button" type="submit" value="登录" />
+</form>
+
+</html>

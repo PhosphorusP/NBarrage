@@ -1,0 +1,121 @@
+* {
+    font-family: 微软雅黑;
+    outline: none;
+    appearance: none;
+    transition-duration: 0.25s;
+    user-select: none;
+    cursor: default;
+}
+::selection {
+    background: rgba(0,0,0,0.5);
+}
+html {
+    background: transparent;
+    width: 512px;
+    height: 384px;
+    position: fixed;
+    top: 32px;
+    transform: translate(32px,0px);
+    box-shadow: 0 0 32px rgba(0,0,0,0.5);
+}
+body {
+    position: absolute;
+    width: 512px;
+    background-image: linear-gradient(hsla(60, 100%, 60%, 1),hsla(30, 100%, 50%, 1));
+    background-size: 512px 384px;
+    background-repeat: no-repeat;
+    border-radius: 4px;
+    text-align: center;
+}
+.topbar {
+    background: #FFF;
+    width: 512px;
+    height: 32px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    -webkit-app-region: drag;
+    box-shadow: 0 0 32px #000;
+    clip: rect(0,512px,64px,0);
+}
+.windowcontrol {
+    font-family: 'windowcontrols';
+    -webkit-app-region: no-drag;
+    display: inline-block;
+    width: 48px;
+    height: 32px;
+    line-height: 32px;
+    background-color: #FFF;
+    float: right;
+    background-size: 16px 16px;
+    background-repeat: no-repeat;
+    background-position: center;
+    line-height: 32px;
+}
+.windowtitle {
+    display: inline-block;
+    line-height: 32px;
+    float: left;
+    margin-left: 8px;
+}
+.windowcontrol:hover {
+    background: #EEE;
+}
+#windowclose:hover {
+    background-color: #F00;
+    color: #FFF;
+}
+.title {
+    margin-top: 48px;
+    margin-bottom: 32px;
+    text-align: center;
+    color: #FFF;
+    font-family: 'Segoe UI';
+    font-weight: 100;
+    font-size: 48px;
+    text-shadow: 0 0 64px #000,0 0 64px #000;
+}
+.panel {
+    background: #FFF;
+    width: 256px;
+    margin: auto;
+    padding: 16px;
+    box-shadow: 0 0 32px #000;
+    text-align: left;
+}
+.input {
+    background: #EFEFEF;
+    float: right;
+    width: calc(100% - 4px);
+    height: 28px;
+    line-height: 28px;
+    font-size: 16px;
+    appearance: none;
+    border-radius: 0;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    border: none;
+    padding-left: 8px;
+    padding-right: 8px;
+    box-sizing:border-box;
+    user-select: text;
+    cursor: text;
+}
+.input:hover,.input:focus,.input:active {
+    background: #DDD;
+}
+option {
+    background: #FFF;
+}
+.button {
+    background: hsl(15,100%,50%);
+    border: none;
+    text-align: center;
+    color: #FFF;
+    font-size: 16px;
+    line-height: 32px;
+    width: 100%;
+}
+.button:hover {
+    background: hsl(0,100%,45%);
+}
