@@ -1,9 +1,8 @@
 * {
-    font-family: 微软雅黑,sans-serif;
+    font-family: 微软雅黑, Helvetica Neue, sans-serif, Helvetica, Arial;
     outline: none;
-    appearance: none;
     transition-duration: 0.25s;
-    user-select: none;
+    -webkit-user-select: none;
     cursor: default;
 }
 ::selection {
@@ -81,6 +80,7 @@ body {
     padding: 16px;
     box-shadow: 0 0 32px #000;
     text-align: left;
+    border-radius: 4px;
 }
 .input {
     background: #EFEFEF;
@@ -89,7 +89,7 @@ body {
     height: 28px;
     line-height: 28px;
     font-size: 16px;
-    appearance: none;
+    -webkit-appearance: none;
     border-radius: 0;
     margin-top: 8px;
     margin-bottom: 8px;
@@ -99,6 +99,7 @@ body {
     box-sizing:border-box;
     user-select: text;
     cursor: text;
+    border-radius: 4px;
 }
 .input:hover,.input:focus,.input:active {
     background: #DDD;
@@ -113,7 +114,8 @@ option {
     color: #FFF;
     font-size: 16px;
     line-height: 32px;
-    width: 100%;
+    width: 101%;
+    border-radius: 2px;
 }
 .button:hover {
     background: hsl(0,100%,45%);
