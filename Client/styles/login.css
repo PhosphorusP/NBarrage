@@ -83,7 +83,7 @@ body {
     border-radius: 4px;
 }
 .input {
-    background: #EFEFEF;
+    background-color: #EFEFEF;
     float: right;
     width: calc(100% - 4px);
     height: 28px;
@@ -102,7 +102,13 @@ body {
     border-radius: 4px;
 }
 .input:hover,.input:focus,.input:active {
-    background: #DDD;
+    background-color: #DDD;
+}
+.list {
+    background-image: url(../images/UI/list.svg);
+    background-size: 16px 16px;
+    background-position: right center;
+    background-repeat: no-repeat;
 }
 option {
     background: #FFF;
