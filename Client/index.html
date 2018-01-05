@@ -16,6 +16,15 @@
             document.getElementById('windowclose').setAttribute('onmousedown', 'window.close()');
             document.getElementById('windowhide').setAttribute('onclick', "windowMinimize()");
         }
+        function verify() {
+            document.getElementById('page').setAttribute('src','http://'+document.getElementById('ip').value+'/verify.html');
+            document.getElementById('button').setAttribute('disabled','');
+        }
+        function test() {
+            if(document.getElementById('page').contentWindow.document.getElementById('NBarrageServer').innerHTML=='NBarrageServer') {
+                document.getElementById('button').removeAttribute('disabled');
+            }
+        }
     </script>
 </head>
 
@@ -28,15 +37,15 @@
     <div class="windowcontrol" id="windowhide">&#xe68d;</div>
 </div>
 <div class="title">NBarrage</div>
-<form action="http://localhost:3000/serverLogin" method="post" class="panel">
-    <input type="text" name="ip" class="input" placeholder="服务器地址" />
+<form id="form" action="http://localhost:3000/serverLogin" method="post" class="panel">
+    <input type="text" name="ip" class="input" placeholder="服务器地址" onkeyup="verify()" id="ip" />
     <select name="type" class="input list" style="cursor: default;">
         <option value="Server">维护</option>
         <option value="Administrator">审核</option>
         <option value="Screen">展示</option>
     </select>
     <input type="password" name="password" class="input" placeholder="密码" />
-    <input class="button" type="submit" value="登录" />
+    <input id="button" class="button" type="submit" value="登录" disabled />
 </form>
-
+<iframe onload="test()" id="page" hidden></iframe>
 </html>

@@ -6,7 +6,7 @@
     cursor: default;
 }
 ::selection {
-    background: rgba(0,0,0,0.5);
+    background: hsla(30, 100%, 50%, 0.3);
 }
 html {
     background: transparent;
@@ -125,4 +125,7 @@ option {
 }
 .button:hover {
     background: hsl(0,100%,45%);
+}
+.button:disabled {
+    background: hsl(15,0%,50%);
 }

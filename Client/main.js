@@ -39,6 +39,7 @@ const appmenu = Menu.buildFromTemplate(appmenutemplate)
 function createWindow() {
     // 创建浏览器窗口。
     win = new BrowserWindow({
+        title: 'NBarrage | 登录',
         width: 576,
         height: 448,
         resizable: false,
