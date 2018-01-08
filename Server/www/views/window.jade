@@ -1,0 +1,27 @@
+html
+  head
+    meta(charset='UTF-8')
+    title NBarrage
+    style.
+      @import url(./styles/login.css);
+      @import url(./fonts/windowcontrols/windowcontrols.css);
+    link(rel="stylesheet", href="/views/styles/login.css")
+    link(rel="stylesheet", href="/views/fonts/windowcontrols/windowcontrols.css")
+    script.
+      var ipcRenderer = require('electron').ipcRenderer;
+      function windowMinimize() {
+      ipcRenderer.send('windowMinimize');
+      }
+      window.onload = function () {
+      document.getElementById('windowclose').setAttribute('onmousedown', 'window.close()');
+      document.getElementById('windowhide').setAttribute('onclick', "windowMinimize()");
+      }
+  body
+  .topbar
+    .windowtitle NBarrage | 登录
+    #windowclose.windowcontrol 
+    #windowhide.windowcontrol 
+  .title NBarrage
+  .panel
+    .paneltitle= message
+    button.button(onclick='window.history.back()') 返回

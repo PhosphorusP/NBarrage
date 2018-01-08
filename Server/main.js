@@ -7,6 +7,9 @@ var config = JSON.parse(fs.readFileSync(configFile));
 var bodyParser = require('body-parser');
 var FileStore = require('session-file-store')(session);
 app.use(bodyParser.urlencoded({ extended: false }))
+app.use(express.static('www'));
+app.set('views', __dirname + '/www/views');
+app.set('view engine', 'jade');
 
 var identityKey = 'skey';
 
@@ -37,13 +40,13 @@ app.post('/serverLogin', function(req, res, next) {
     if (able) {
         req.session.regenerate(function(err) {
             if (err) {
-                res.send('登录失败');
+                res.render('window.jade',{message:'登录失败'});
             }
             req.session.serverLogined = true;
-            res.send('登录成功');
+            res.render('window.jade',{message:'登录成功'});
         })
     } else {
-        res.send('密码错误');
+        res.render('window.jade',{message:'密码错误'});
     }
 })
 
@@ -60,14 +63,12 @@ app.get('/serverLogout', function(req, res, next) {
 app.get(/\/pages\/.*$/, function(req, res, next) {
     var sess = req.session;
     if (sess.serverLogined) {
-        //res.send('已经登录');
+        res.render('window.jade',{message:'已经登录'});
         return next();
     } else {
-        res.send('还未登录');
+        res.render('window.jade',{message:'还未登录'});
     }
 })
-
-app.use(express.static('www'));
 
 var server = app.listen(3000, function() {
     console.log('start');
